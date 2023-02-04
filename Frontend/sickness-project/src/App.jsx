@@ -5,14 +5,14 @@ import Doctor from './assets/doctor.png'
 import { Box, Button, TextField, Typography } from '@mui/material'
 
 function App() {
-
+  const [text, setText] = useState('Sickness PolyHacks')
   const TextInput = () => {
-    const inputed_text=document.getElementById("user-text").textContent;
+    const inputed_text=text;
 
     axios.get("http://127.0.0.1:5000/get_result/"+inputed_text).then(res => 
         {
             console.log(res);
-            document.getElementById("user-text").textContent = res.data.serverReply;
+            setText(res.data.serverReply);
             console.log(res.data.serverReply)
         }
     );
@@ -27,7 +27,7 @@ function App() {
           Sickness PolyHacks is a web application that allows users to input their symptoms and receive a diagnosis of their illness.
         </p>
       </Typography>
-      <Typography variant="h8">Enter your symptoms</Typography>
+      <Typography variant="h8">{text}</Typography>
       <TextField
       id="outlined"
       label="Symptoms"
@@ -37,10 +37,10 @@ function App() {
       variant="outlined"
       />
       <Button variant="contained" width="20px" color="success">Submit</Button>
+      <Button variant="contained" width="20px" onClick={TextInput}>Set text</Button>
     </Box>
     <Box m="60px" display="flex" flexDirection="column" width="40%">
       <img className='hero__img' src={Doctor} alt="Doctor" />
-      <button onClick={TextInput}>Submit</button>
   </Box>
   </Box>
   )
