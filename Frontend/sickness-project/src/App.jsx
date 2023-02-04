@@ -15,15 +15,8 @@ function App() {
             console.log(res.data.serverReply)
         }
     );
-    <button onClick={TextInput}>Submit</button>
-    </div>
+  }
 
-  )
-}
-
-export default App
-
-};
   return (
     <Box backgroundColor="white" display="flex" flexDirection="row" borderRadius="15px" m="40px">
     <Box m="60px" display="flex" flexDirection="column" width="50%">
@@ -46,6 +39,7 @@ export default App
     </Box>
     <Box m="60px" display="flex" flexDirection="column" width="40%">
       <img className='hero__img' src={Doctor} alt="Doctor" />
+      <button onClick={TextInput}>Submit</button>
   </Box>
   </Box>
   )
