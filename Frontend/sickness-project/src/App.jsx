@@ -1,33 +1,33 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import { Box, TextField, Button, Typography } from '@mui/material'
+import Doctor from './assets/doctor.png'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </div>
+    <Box backgroundColor="white" display="flex" flexDirection="row" borderRadius="15px" m="40px">
+      <Box m="60px" display="flex" flexDirection="column" width="50%">
+        <Typography variant="h3">Sickness PolyHacks</Typography>
+        <Typography> 
+          <p>
+            Sickness PolyHacks is a web application that allows users to input their symptoms and receive a diagnosis of their illness.
+          </p>
+        </Typography>
+        <Typography variant="h8">Enter your symptoms</Typography>
+        <TextField
+        id="outlined"
+        label="Symptoms"
+        multiline
+        rows={4}
+        defaultValue="Ex: Fever, Cough, Headache, etc."
+        variant="outlined"
+        />
+        <Button variant="contained" width="20px" color="success">Submit</Button>
+      </Box>
+      <Box m="60px" display="flex" flexDirection="column" width="40%">
+        <img className='hero__img' src={Doctor} alt="Doctor" />
+    </Box>
+    </Box>
   )
 }
 
