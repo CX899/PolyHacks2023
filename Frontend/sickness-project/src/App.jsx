@@ -23,7 +23,7 @@ function App() {
   return (
     <Box >
       <Navbar />
-    <Box display="flex" flexDirection="row" borderRadius="15px" m="40px" height="75vh">
+    <Box display="flex" flexDirection="row" borderRadius="15px" m="40px" height="70vh">
     <Box m="20px" display="flex" flexDirection="column" width="40%">
       <img className='hero__img' src={Doctor} alt="Doctor" />
   </Box>
