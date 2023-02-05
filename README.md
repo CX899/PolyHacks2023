@@ -20,7 +20,7 @@ We are incredibly proud of getting this model to work. It was our first time wor
 We are also proud of creating a web app whose main selling point is functionality while having a pleasant interface. In the past, we often focused too much on the UI/UX design and neglected usability.
 
 ##What's next for SicknessHacks
-Expand the dataset used to cover more illnesses and symptoms.
-Provide the possibility of symptom severity to provide a more accurate diagnosis.
-Add the option to contact the nearest hospital in case of emergencies.
-Synchronize it to a database so that doctors can see their patients' symptoms history.
+- Expand the dataset used to cover more illnesses and symptoms.
+- Provide the possibility of symptom severity to provide a more accurate diagnosis.
+- Add the option to contact the nearest hospital in case of emergencies.
+- Synchronize it to a database so that doctors can see their patients' symptoms history.
