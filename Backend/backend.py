@@ -76,13 +76,14 @@ def get_result(user_data):
 
     symptom_index = {}
     for index, value in enumerate(symptoms):
-        symptom = value
+        symptom = " ".join([i.capitalize() for i in value.split("_")])
         symptom_index[symptom] = index
 
     data_dict = {
         "symptom_index":symptom_index,
         "predictions_classes":encoder.classes_
     }
+
 
     def predictDisease(symptoms):
         symptoms = symptoms.split(",")
