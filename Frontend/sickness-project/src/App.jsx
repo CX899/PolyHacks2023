@@ -7,6 +7,8 @@ import Navbar from './components/navbar';
 import Response from './components/Response';
 import Autocomplete from '@mui/material/Autocomplete';
 import severity from '../../../data/Symptom-severity.json'
+import stats from './assets/charts.svg'
+import Nurse from './assets/Nurse.svg'
 import AOS from 'aos';
 import 'aos/dist/aos.css'; 
 AOS.init();
@@ -46,6 +48,7 @@ function App() {
 
   },[selectedValue1,selectedValue2,selectedValue3,selectedValue4,selectedValue5, ]) 
 
+ 
 
   //Returns biopsis
   const getBiopsis = () => {
@@ -116,6 +119,32 @@ function Biospsis () {
           Sickness PolyHacks is a web application that allows users to input their symptoms and receive a diagnosis of their illness.
         </Typography>
     </Box>
+  </Box>
+  <Box backgroundColor="#e1f5e4" p="40px" borderRadius="15px" boxShadow={3}>
+      <Typography variant="h3" fontFamily="roboto" fontWeight="600" sx={{"textShadow": ".5rem .5rem 0 rgba(22, 160, 133, .2)",}}>
+      How it works
+      </Typography>
+  <Box display="flex" flexDirection="row">
+    <Box>
+      <Typography m="60px" fontFamily="Poppins" fontWeight="400" textAlign="left" width="60%" height="20vh">
+      In SicknessHacks, our web app, we utilized an <b>AI Model</b> trained on a large dataset of <b>symptoms</b> and <b>diseases</b> to provide a diagnosis to the user. The user inputs their symptoms and the AI model processes the information, utilizing its vast knowledge to generate a <b><em>diagnose</em></b>. 
+      </Typography>
+      </Box>
+      <Box paddingRight="10%">
+      <img className='hero__img' src={stats} alt="Doctor" />
+      </Box>
+    </Box>
+    <Box display="flex" flexDirection="row">
+    <Box paddingLeft="10%">
+      <img className='hero__img' src={Nurse} alt="Doctor" />
+      </Box>
+    <Box>
+      <Typography m="60px" fontFamily="Poppins" fontWeight="400" textAlign="right" paddingLeft="3%" height="20vh">
+      SicknessHacks then presents the most likely diagnosis based on the symptoms provided, along with relevant information and recommended next steps for the user to take. This approach to diagnosis helps to <b>emergency waiting rooms</b>. 
+      </Typography>
+    </Box>
+    
+      </Box>
   </Box>
   <Box display="flex" flexDirection="column" borderRadius="15px" m="40px" marginTop="30vh">
     <Box>

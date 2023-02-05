@@ -43,9 +43,10 @@ const Response = ({word, score}) => {
 
   return (
     <Box m="30px" backgroundColor="#f7f7f7" textAlign="left" borderRadius="15px" boxShadow={1} data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1000">
-        <Typography m="60px" fontFamily="Poppins" fontWeight="600" fontSize="2rem">Our prediction: <Typography marginLeft="5px"fontFamily="Poppins" fontWeight="600" fontSize="2rem" color="grey">{word.toUpperCase()}</Typography></Typography>
+        <Typography m="60px" fontFamily="Poppins" fontWeight="600" fontSize="2rem" paddingTop="5vh">Our prediction: <Typography marginLeft="5px"fontFamily="Poppins" fontWeight="600" fontSize="2rem" color="#51bd63">{word.toUpperCase()}</Typography></Typography>
         <Typography m="60px" fontFamily="Poppins" fontWeight="600" fontSize="2rem">Your M.I.D Score:<Typography marginLeft="5px"fontFamily="Poppins" fontWeight="600" fontSize="2rem" color="grey">{score}<ScoreDisplay score={score}/> </Typography></Typography>
         <Typography marginRight="60px" marginLeft="60px" fontFamily="Poppins" fontWeight="400" textAlign="left">
+            <Typography fontWeight="700">Defintion: </Typography> <br/>
             {text}
         </Typography>
         <Box display="flex" flexDirection="row">
