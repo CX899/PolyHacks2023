@@ -20,9 +20,7 @@ app.config['CORS_HEADERS'] = 'Content-Type'
 @app.route("/get_result/<user_data>", methods=["GET"])
 
 def get_result(user_data):
-    #text = user_data
-    #text += "Will this work?"
-    #return {"serverReply": text}
+    symptoms = user_data
 
     # Reading the training data
     DATA_PATH = "dataset/Training.csv"
@@ -46,12 +44,14 @@ def get_result(user_data):
     
     print(f"Accuracy on test data by Random Forest Classifier: {accuracy_score(y_test, preds)*100}")
     
+    """
     cf_matrix = confusion_matrix(y_test, preds)
     plt.figure(figsize=(12,8))
     sns.heatmap(cf_matrix, annot=True)
     plt.title("Confusion Matrix for Random Forest Classifier on Test Data")
     plt.show()
-    
+    """
+
     final_rf_model = RandomForestClassifier(random_state=18)
     final_rf_model.fit(X, y)
     
@@ -65,13 +65,15 @@ def get_result(user_data):
     
     print(f"Accuracy on Test dataset by the combined model: {accuracy_score(test_Y, final_preds)*100}")
     
+    """
     cf_matrix = confusion_matrix(test_Y, final_preds)
     plt.figure(figsize=(12,8))
     
     sns.heatmap(cf_matrix, annot = True)
     plt.title("Confusion Matrix for Combined Model on Test Dataset")
     plt.show()
-
+    """
+    
     symptoms = X.columns.values
 
     symptom_index = {}
@@ -91,8 +93,9 @@ def get_result(user_data):
         # creating input data for the models
         input_data = [0] * len(data_dict["symptom_index"])
         for symptom in symptoms:
-            index = data_dict["symptom_index"][symptom]
-            input_data[index] = 1
+            if symptom != "undefined":
+                index = data_dict["symptom_index"][symptom]
+                input_data[index] = 1
             
         # reshaping the input data and converting it into suitable format for model predictions
         input_data = np.array(input_data).reshape(1,-1)
@@ -101,7 +104,7 @@ def get_result(user_data):
     
         return rf_prediction
 
-get_result("wow")
+    return {"serverReply": predictDisease(symptoms)}
 
 
 
