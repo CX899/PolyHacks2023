@@ -1,116 +1,16 @@
-import * as React from 'react';
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
 
 const ComboBox = () => {
   return (
-    <Autocomplete
-      disablePortal
-      id="combo-box-demo"
-      options={matchingSymptoms}
-      sx={{ width: 300 }}
-      renderInput={(params) => <TextField {...params} label="Symptom" />}
-    />
+      <Autocomplete maxWidth="200px"
+        options={options}
+        renderInput={(params) => <TextField {...params} label="Options" variant="outlined" />}
+      />
   );
 }
 
-// Top 100 films as rated by IMDb users. http://www.imdb.com/chart/top
-const matchingSymptoms = [
-  {label :'back_pain'},
-  { label: 'constipation'},
-  { label: 'abdominal_pain'},
-  { label: 'diarrhoea'},
-  { label: 'mild_fever'},
-  { label: 'yellow_urine'},
-  { label: 'yellowing_of_eyes'},
-  { label: 'acute_liver_failure'},
-  { label: 'fluid_overload'},
-  { label: 'swelling_of_stomach'},
-  { label: 'swelled_lymph_nodes'},
-  { label: 'malaise'},
-  { label: 'blurred_and_distorted_vision'},
-  { label: 'phlegm'},
-  { label: 'throat_irritation'},
-  { label: 'redness_of_eyes'},
-  { label: 'sinus_pressure'},
-  { label: 'runny_nose'},
-  { label: 'congestion'},
-  { label: 'chest_pain'},
-  { label: 'weakness_in_limbs'},
-  { label: 'fast_heart_rate'},
-  { label: 'pain_during_bowel_movements'},
-  { label: 'pain_in_anal_region'},
-  { label: 'bloody_stool'},
-  { label: 'irritation_in_anus'},
-  { label: 'neck_pain'},
-  { label: 'dizziness'},
-  { label: 'cramps'},
-  { label: 'bruising'},
-  { label: 'obesity'},
-  { label: 'swollen_legs'},
-  { label: 'swollen_blood_vessels'},
-  { label: 'puffy_face_and_eyes'},
-  { label: 'enlarged_thyroid'},
-  { label: 'brittle_nails'},
-  { label: 'swollen_extremeties'},
-  { label: 'excessive_hunger'},
-  { label: 'extra_marital_contacts'},
-  { label: 'drying_and_tingling_lips'},
-  { label: 'slurred_speech'},
-  { label: 'knee_pain'},
-  { label: 'hip_joint_pain'},
-  { label: 'muscle_weakness'},
-  { label: 'stiff_neck'},
-  { label: 'swelling_joints'},
-  { label: 'movement_stiffness'},
-  { label: 'spinning_movements'},
-  { label: 'loss_of_balance'},
-  { label: 'unsteadiness'},
-  { label: 'weakness_of_one_body_side'},
-  { label: 'loss_of_smell'},
-  { label: 'bladder_discomfort'},
-  { label: 'foul_smell_of urine'},
-  { label: 'continuous_feel_of_urine'},
-  { label: 'passage_of_gases'},
-  { label: 'internal_itching'},
-  { label: 'toxic_look_(typhos)'},
-  { label: 'depression'},
-  { label: 'irritability'},
-  { label: 'muscle_pain'},
-  { label: 'altered_sensorium'},
-  { label:  'red_spots_over_body'},
-  { label: 'belly_pain'},
-  { label: 'abnormal_menstruation'},
-  { label: 'dischromic _patches'},
-  { label: 'watering_from_eyes'},
-  { label: 'increased_appetite'},
-  { label: 'polyuria'},
-  { label: 'family_history'},
-  { label: 'mucoid_sputum'},
-  { label: 'rusty_sputum'},
-  { label: 'lack_of_concentration'},
-  { label: 'visual_disturbances'},
-  { label: 'receiving_blood_transfusion'},
-  { label: 'receiving_unsterile_injections'},
-  { label:'coma'},
-  { label:'stomach_bleeding'},
-  { label:'distention_of_abdomen'},
-  { label:'history_of_alcohol_consumption'},
-  { label:'fluid_overload'},
-  { label:'blood_in_sputum'},
-  { label:'prominent_veins_on_calf'},
-  { label:'palpitations'},
-  { label:'painful_walking'},
-  { label:'pus_filled_pimples'},
-  { label:'blackheads'},
-  { label:'scurring'},
-  { label:'skin_peeling'},
-  { label:'silver_like_dusting'},
-  { label:'small_dents_in_nails'},
-  { label:'inflammatory_nails'},
-  { label:'blister'},
-  { label:'red_sore_around_nose'},
-  { label:'yellow_crust_ooze'},
-];
+const options = ["itching","skin_rash","nodal_skin_eruptions","continuous_sneezing","shivering","chills","joint_pain","stomach_pain","acidity","ulcers_on_tongue","muscle_wasting","vomiting","burning_micturition","spotting_urination","fatigue","weight_gain","anxiety","cold_hands_and_feets","mood_swings","weight_loss","restlessness","lethargy","patches_in_throat","irregular_sugar_level","cough","high_fever","sunken_eyes","breathlessness","sweating","dehydration","indigestion","headache","yellowish_skin","dark_urine","nausea","loss_of_appetite","pain_behind_the_eyes","back_pain","constipation","abdominal_pain","diarrhoea","mild_fever","yellow_urine","yellowing_of_eyes","acute_liver_failure","fluid_overload","swelling_of_stomach","swelled_lymph_nodes","malaise","blurred_and_distorted_vision","phlegm","throat_irritation","redness_of_eyes","sinus_pressure","runny_nose","congestion","chest_pain","weakness_in_limbs","fast_heart_rate","pain_during_bowel_movements","pain_in_anal_region","bloody_stool","irritation_in_anus","neck_pain","dizziness","cramps","bruising","obesity","swollen_legs","swollen_blood_vessels","puffy_face_and_eyes","enlarged_thyroid","brittle_nails","swollen_extremeties","excessive_hunger","extra_marital_contacts","drying_and_tingling_lips","slurred_speech","knee_pain","hip_joint_pain","muscle_weakness","stiff_neck","swelling_joints","movement_stiffness","spinning_movements","loss_of_balance","unsteadiness","weakness_of_one_body_side","loss_of_smell","bladder_discomfort","foul_smell_ofurine","continuous_feel_of_urine","passage_of_gases","internal_itching","toxic_look_(typhos)","depression","irritability","muscle_pain","altered_sensorium","red_spots_over_body","belly_pain","abnormal_menstruation","dischromic_patches","watering_from_eyes","increased_appetite","polyuria","family_history","mucoid_sputum","rusty_sputum","lack_of_concentration","visual_disturbances","receiving_blood_transfusion","receiving_unsterile_injections","coma","stomach_bleeding","distention_of_abdomen","history_of_alcohol_consumption","fluid_overload","blood_in_sputum","prominent_veins_on_calf","palpitations","painful_walking","pus_filled_pimples","blackheads","scurring","skin_peeling","silver_like_dusting","small_dents_in_nails","inflammatory_nails","blister","red_sore_around_nose","yellow_crust_ooze","prognosis"]
+
 export default ComboBox;
 
