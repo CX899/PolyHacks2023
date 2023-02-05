@@ -40,14 +40,6 @@ def get_result(user_data):
     rf_model = RandomForestClassifier(random_state=18)
     rf_model.fit(X_train, y_train)
     
-    """
-    cf_matrix = confusion_matrix(y_test, preds)
-    plt.figure(figsize=(12,8))
-    sns.heatmap(cf_matrix, annot=True)
-    plt.title("Confusion Matrix for Random Forest Classifier on Test Data")
-    plt.show()
-    """
-
     final_rf_model = RandomForestClassifier(random_state=18)
     final_rf_model.fit(X, y)
     
@@ -60,15 +52,6 @@ def get_result(user_data):
     final_preds = final_rf_model.predict(test_X)
     
     print(f"Accuracy on Test dataset by the model: {accuracy_score(test_Y, final_preds)*100}")
-    
-    """
-    cf_matrix = confusion_matrix(test_Y, final_preds)
-    plt.figure(figsize=(12,8))
-    
-    sns.heatmap(cf_matrix, annot = True)
-    plt.title("Confusion Matrix for Combined Model on Test Dataset")
-    plt.show()
-    """
     
     symptoms = X.columns.values
 
@@ -86,6 +69,7 @@ def get_result(user_data):
     def predictDisease(stmps):
         finalstmps = stmps.split(",")
         print(finalstmps)
+        
         # creating input data for the models
         input_data = [0] * len(data_dict["symptom_index"])
         for symptom in finalstmps:
