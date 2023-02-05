@@ -42,7 +42,7 @@ function App() {
   //Returns biopsis
   const getBiopsis = () => {
     setView(true);
-    console.log(Formating(selectedValue1) + "," + Formating(selectedValue2) + "," + Formating(selectedValue3) + "," + Formating(selectedValue4) + "," + Formating(selectedValue5));
+    TextInput(Formating(selectedValue1) + "," + Formating(selectedValue2) + "," + Formating(selectedValue3) + "," + Formating(selectedValue4) + "," + Formating(selectedValue5));
   }
 
 
@@ -62,9 +62,8 @@ function App() {
   } 
 
   //Communication backend
-  const TextInput = () => {
+  const TextInput = (inputed_text) => {
 
-    const inputed_text=text;
 
     axios.get("http://127.0.0.1:5000/get_result/"+inputed_text).then(res => 
         {
