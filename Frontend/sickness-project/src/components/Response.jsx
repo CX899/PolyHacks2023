@@ -8,6 +8,7 @@ import 'aos/dist/aos.css';
 AOS.init();
 
 const Response = ({word}) => {
+    console.log(word);
     const [text, setText] = useState('')
     const [Multiprecautions, setMultiPrecautions] = useState([
         {precaution1: '', precaution2: '', precaution3: '', precaution4: ''},

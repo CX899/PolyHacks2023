@@ -20,7 +20,7 @@ app.config['CORS_HEADERS'] = 'Content-Type'
 @app.route("/get_result/<user_data>", methods=["GET"])
 
 def get_result(user_data):
-    symptoms = user_data
+    obtained_symptoms = user_data
 
     # Reading the training data
     DATA_PATH = "dataset/Training.csv"
@@ -39,10 +39,6 @@ def get_result(user_data):
     # Training and testing Random Forest Classifier
     rf_model = RandomForestClassifier(random_state=18)
     rf_model.fit(X_train, y_train)
-    preds = rf_model.predict(X_test)
-    print(f"Accuracy on train data by Random Forest Classifier: {accuracy_score(y_train, rf_model.predict(X_train))*100}")
-    
-    print(f"Accuracy on test data by Random Forest Classifier: {accuracy_score(y_test, preds)*100}")
     
     """
     cf_matrix = confusion_matrix(y_test, preds)
@@ -63,7 +59,7 @@ def get_result(user_data):
     
     final_preds = final_rf_model.predict(test_X)
     
-    print(f"Accuracy on Test dataset by the combined model: {accuracy_score(test_Y, final_preds)*100}")
+    print(f"Accuracy on Test dataset by the model: {accuracy_score(test_Y, final_preds)*100}")
     
     """
     cf_matrix = confusion_matrix(test_Y, final_preds)
@@ -87,12 +83,12 @@ def get_result(user_data):
     }
 
 
-    def predictDisease(symptoms):
-        symptoms = symptoms.split(",")
-        
+    def predictDisease(stmps):
+        finalstmps = stmps.split(",")
+        print(finalstmps)
         # creating input data for the models
         input_data = [0] * len(data_dict["symptom_index"])
-        for symptom in symptoms:
+        for symptom in finalstmps:
             if symptom != "undefined":
                 index = data_dict["symptom_index"][symptom]
                 input_data[index] = 1
@@ -104,7 +100,7 @@ def get_result(user_data):
     
         return rf_prediction
 
-    return {"serverReply": predictDisease(symptoms)}
+    return {"serverReply": predictDisease(obtained_symptoms)}
 
 
 
