@@ -32,9 +32,10 @@ function App() {
   useEffect(() => {
     setSelectedValue1(selectedValue1);
     setSelectedValue2(selectedValue2);
-    setSelectedValue3(setSelectedValue3);
-    setSelectedValue4(setSelectedValue4);
-    setSelectedValue5(setSelectedValue5);
+    setSelectedValue3(selectedValue3);
+    setSelectedValue4(selectedValue4);
+    setSelectedValue5(selectedValue5);
+    
 
   },[selectedValue1,selectedValue2,selectedValue3,selectedValue4,selectedValue5, ]) 
 
@@ -48,10 +49,13 @@ function App() {
 
   //Formats user input
   const Formating = (input) => {
+    if (input != '') {
     return input.replace(/_/g, ' ').replace(/\b[a-z]/g, function(letter) {
       return letter.toUpperCase();
+
     });
   }
+}
 
 
   //On Press button show biopsis
