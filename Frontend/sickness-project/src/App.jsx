@@ -38,7 +38,13 @@ function App() {
 
   const getBiopsis = () => {
     setView(true);
-    console.log(selectedValue1 + selectedValue2 + selectedValue3 + selectedValue4 + selectedValue5);
+    console.log(Formating(selectedValue1) + "," + Formating(selectedValue2) + "," + Formating(selectedValue3) + "," + Formating(selectedValue4) + "," + Formating(selectedValue5));
+  }
+
+  const Formating = (input) => {
+    return input.replace(/_/g, ' ').replace(/\b[a-z]/g, function(letter) {
+      return letter.toUpperCase();
+    });
   }
 
   function Biospsis () {
